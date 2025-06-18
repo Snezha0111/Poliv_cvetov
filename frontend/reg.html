@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style_auth.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="log_big">
+            <img src="./image/2.png" alt="Лого_Авоська" class="logo_img">
+            <span class="logo_name">Авоська</span>
+        </div>
+        <div class="block_reg">
+            <form class="form_auth_reg" id="form_reg" action="">
+                <div class="name_form">
+                    <span>Регистрация</span>
+                </div>
+                <div class="place_log">
+                    <label for="login">Логин:</label>
+                    <input class="login" id="log_reg" type="email">
+                    <label for="password">Пароль:</label>
+                    <input class="password" id="pass_reg" type="password" required minlength="4">
+                    <label for="login">ФИО:</label>
+                    <input class="fio" id="fio_reg" type="text" required pattern="^[А-Я][а-я]+(\s+[А-Я][а-я]+){2}$">
+                    <label for="password">Телефон:</label>
+                    <input class="phone" id="tel_reg" type="tel" required placeholder="+7(XXX)-XXX-XX-XX" pattern="^\+7$\d{3}$-\d{3}-\d{2}-\d{2}$">
+                    <label for="login">Почта:</label>
+                    <input class="ema" id="email_reg" type="email" required>
+                </div>
+                <div class="buttons_set">
+                    <button class="but_log" id="but_per_auth" type="button" >Авторизация</button>
+                    <button class="but_log" id="but_reg" type="submit">Войти</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../backend/reg.js"></script>
+</body>
+</html>

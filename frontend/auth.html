@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style_auth.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="log_big">
+            <img src="./image/2.png" alt="Лого_Авоська" class="logo_img">
+            <span class="logo_name">Авоська</span>
+        </div>
+        <div class="block_auth">
+            <form class="form_auth_reg" id="form_auth" action="">
+                <div class="name_form">
+                    <span>Авторизация</span>
+                </div>
+                <div class="place_log">
+                    <label for="login">Логин:</label>
+                    <input class="login" id="log_auth" type="email">
+                    <label for="password">Пароль:</label>
+                    <input class="password" id="pass_auth" type="password" minlength="4">
+                </div>
+                <div class="buttons_set">
+                    <button class="but_log" id="but_per_reg" type="button">Регистрация</button>
+                    <button class="but_log" id="but_auth" type="submit">Войти</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../backend/auth.js"></script>
+</body>
+</html>
