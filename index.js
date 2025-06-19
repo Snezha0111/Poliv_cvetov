@@ -71,9 +71,27 @@ app.post('/authorization', async(req,res)=>{
 })
 
 // Вывод заявок
+app.get('/zayv', async (req, res) => {
+    try {
+        const data = await db.query('SELECT users.familia || users.name || users.last_name AS fio_user, users.email, product.name_pr, orders.count_pr, orders.status FROM orders JOIN users ON orders.user_id = users.id_user JOIN products ON orders.product_id = products.id_product');
+        res.json(data);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Ошибка запроса');
+    }
+});
 
-
-
+// Удаление пользователей админимтстратором
+app.delete('/delete/:id', async (req, res) => {
+    try {
+        const id = req.body.id_user;
+        const user = await db.query('DELETE FROM users WHERE id_user = $1', [id]) 
+        res.json(user);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Ошибка запроса');
+    }
+});
 
 
 app.listen(PORT, () =>{
